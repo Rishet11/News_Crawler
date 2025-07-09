@@ -50,11 +50,21 @@ class NewsCrawler:
                 continue
 
             full_url = urljoin(self.base_url, link)
+            
 
-            # Skip non-http(s)
+            # non-http/http links
             if urlparse(full_url).scheme not in ("http", "https"):
                 continue
 
+            if any(bad in full_url.lower() for bad in [
+            "tiktok", "instagram", "youtube", "facebook", "linkedin",
+            "/login", "/register", "/contact", "/about", "/terms", "/privacy",
+            "/sitemap", "/glossary", "/dictionary", "/disclaimer", "/rss",
+            "/watchlist", "/subscribe", "/portfolio", "/calculator"
+            ]):
+                continue
+            
+            
             filtered.append(full_url)
 
         return list(set(filtered))
@@ -82,9 +92,14 @@ class NewsCrawler:
  
             bad_title_keywords = [
                 "login", "register", "privacy", "terms", "editorial",
-                "email protection", "access denied", "cloudflare", "marketbeat all access",
-                "rss", "portfolio", "guidelines", "interstitial", "subscribe"
+                "portfolio", "email protection", "access denied", "cloudflare",
+                "rss", "contact", "guidelines", "interstitial", "subscribe",
+                "home", "dictionary", "watchlist", "about", "glossary", "calendar",
+                "calculator", "disclaimer", "legal", "tools", "data", "products",
+                "news", "report", "newsletter", "media", "status", "account",
+                "market data", "api", "research", "app store", "cookie", "%doc_title%"
             ]
+
 
             for link in article_links:
                 full_url = urljoin(self.base_url, link)

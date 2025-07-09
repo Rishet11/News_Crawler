@@ -29,11 +29,14 @@ def clean_junk_links():
     cursor = conn.cursor()
 
     junk_patterns = [
-        "%redirect%", "%login%", "%rss%", "%terms%",
-        "%privacy%", "%portfolio%", "%editorial%",
-        "%calendar%", "%watchlist%", "%contact%",
-        "%glossary%", "%#%", "mailto:%", "javascript:%"
+        "%redirect%", "%login%", "%rss%", "%terms%", "%privacy%", "%portfolio%", 
+        "%editorial%", "%calendar%", "%watchlist%", "%contact%", "%glossary%", 
+        "%about%", "%#", "mailto:%", "javascript:%", "%dictionary%", "%subscribe%",
+        "%register%", "%home%", "%calculator%", "%disclaimer%", "%tools%", "%legal%",
+        "%products%", "%report%", "%newsletter%", "%api%", "%app%", "%cookie%", "%account%"
     ]
+
+
 
     deleted = 0
     for pattern in junk_patterns:

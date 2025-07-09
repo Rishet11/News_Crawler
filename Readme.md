@@ -4,11 +4,9 @@ A Python-based crawler that scrapes new financial articles from 5 major news web
 
 ## Overview
 
-This project automates the process of discovering and archiving the latest financial news articles. It periodically scans supported websites, extracts relevant metadata, and ensures no duplicate articles are stored.
+This project automates the process of discovering and archiving the latest financial news articles. It scans supported websites, extracts relevant metadata, and ensures no duplicate articles are stored.
 
 ## Features
-
-- Periodic link scanning for new articles
 - URL deduplication to avoid duplicates
 - Metadata extraction (title, publish date)
 - Storage in a local SQLite database
