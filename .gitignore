@@ -17,3 +17,6 @@ ENV/
 
 # Logs
 *.log
+
+# Cleaned articles
+cleaned_articles/
