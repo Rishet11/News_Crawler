@@ -16,7 +16,7 @@ This project automates the process of discovering and archiving the latest finan
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/yourusername/news_crawler.git
+   git clone https://github.com/Rishet11/News_Crawler
    cd news_crawler
    ```
 
